@@ -12,7 +12,7 @@ There are a few supported APIs to access ZORA chain information.
 
 2. Block Streaming and Indexing:
 
-    * [Pinax](https://pinax.network/) provides [Firehose](https://app.pinax.network/docs/firehose) at `zora.firehose.pinax.network:443`, which streams full blocks over gRPC including call traces, balance changes and storage changes that a JSON-RPC node does not return.
+    * [Pinax](https://pinax.network/) provides [Firehose](https://app.pinax.network/docs/firehose) at `zora.firehose.pinax.network:443`, which streams full blocks over gRPC including call traces, balance changes and storage changes in the same stream, rather than one `debug_`/`trace_` call per transaction.
     * [Substreams](https://app.pinax.network/docs/substreams) at `zora.substreams.pinax.network:443` runs Rust modules in parallel on top of those blocks, writing results to PostgreSQL or ClickHouse, streaming them to a consumer, or feeding a Graph Node as a subgraph data source.
 
 3. Explorer Access:
